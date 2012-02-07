@@ -1,0 +1,30 @@
+sass_enable: true
+coffeescript_enable: true
+templates_enable: false
+
+# ----------------------------------------
+sass_images_dir: 'public/images'
+sass_files_dir: 'sass'
+sass_output_dir: 'public/css_g'
+sass_line_comments: false
+sass_css_generated_style: 'expanded' # compact | expanded | compressed
+sass_options: {cache: false}
+# compass_config:
+#   '': ''
+compass_plugins:
+  sass-capucine:
+  # twitter-bootstrap: twitter_bootstrap
+
+# sass_import_css: false
+# sass_import_formats: 'css to sass'
+# sass_import_css_dir: 'css/import'
+# sass_import_output_dir: 'sass/converted'
+
+coffeescript_options: {bare: true}
+coffeescript_files_dir: 'coffeescript'
+coffeescript_output_dir: 'public/js_g'
+
+
+
+# DOCUMENTATION :
+# http:// capucine.dln.name
