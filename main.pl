@@ -41,6 +41,26 @@ get '/lines/:line_id' => sub {
     $self->render(json => $rep);
 };
 
+get '/dates/:line_number/:dir/:stop_id/now' => sub {
+    my $rep;
+    my $self = shift;
+
+    my $line_number = $self->param('line_number');
+    my $dir = $self->param('dir');
+    my $stop_id = $self->param('stop_id');
+
+    my $dates = Tbc->now($line_number, $dir, $stop_id);
+
+    $rep = {
+        'stop_id' => $stop_id,
+        'line_number' => $line_number,
+        'direction' => $dir,
+        'date' => 'now',
+        'dates' => $dates,
+    };
+
+    $self->render(json => $rep);
+};
 get '/dates/:line_number/:dir/:stop_id/:date' => sub {
     my $rep;
     my $self = shift;
@@ -62,6 +82,7 @@ get '/dates/:line_number/:dir/:stop_id/:date' => sub {
 
     $self->render(json => $rep);
 };
+
 
 app->types->type(json => 'application/json; charset=utf-8;');
 app->start;

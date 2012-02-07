@@ -1,16 +1,16 @@
- <!DOCTYPE html>
-  <html>
+<!DOCTYPE html>
+<html>
     <head>
 
-    <title>API TBC</title>
+        <title>API TBC</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<!-- <link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'>
+        -->
+        <link rel="stylesheet" type="text/css" href="/css_g/main.css">
 
-    <!-- <link href='http://fonts.googleapis.com/css?family=Sofia' rel='stylesheet' type='text/css'> -->
-    <link rel="stylesheet" type="text/css" href="/css_g/main.css">
-
-<script type="text/javascript">
+        <script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-29008607-1']);
@@ -29,44 +29,49 @@
     <body>
         <%= content %>
 
-        <div class="container">
-            <h1>API TBC</h1>
+            <div class="container">
+                <h1>API TBC</h1>
 
-            <h2>Introduction</h2>
-            <p>
-                Ceci est un prototype d'API TBC (<a href="http://www.infotbc.com/">Transports Bordelais</a>).
-                <br>
-                <br>
+                <h2>Introduction</h2>
+                <p>
+                    Ceci est un prototype d'API TBC (
+                    <a href="http://www.infotbc.com/">Transports Bordelais</a>
+                    ).
+                    <br>
+                    <br>
+                    Pour l'instant, il n'y a que quelques méthodes, d'autres arrivent très bientôt.
+                </p>
 
-                Pour l'instant, il n'y a que quelques méthodes, d'autres arrivent très bientôt.
+                <p class="alert warning">
+                    La racine de l'API va changer. Utilisez celle-ci pour les tests uniquement.
+                    <br>Plus d'infos prochainement.</p>
 
-            </p>
+                <p>
+                    Auteur :
+                    <a href="http://dln.name">Damian Le Nouaille</a>
+                    . (
+                    <a href="http://twitter.com/damln">Twitter</a>
+                    )
+                    <br>
+                    Code :
+                    <a href="http://github.com/damln/Tbc">Github</a>
+                    .
+                    <br>
 
-            <p class="alert warning">
-                La racine de l'API va changer. Utilisez celle-ci pour les tests uniquement. <br>
-                Plus d'infos prochainement.
-            </p>
+                    <br>
+                    <a href="https://twitter.com/intent/tweet?button_hashtag=apitbc" class="twitter-hashtag-button" data-related="damln" data-url="http://tbc.dln.name/">Tweet #apitbc</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </p>
 
-            <p>
-                Auteur : <a href="http://dln.name">Damian Le Nouaille</a>. (<a href="http://twitter.com/damln">Twitter</a>)
-                <br>
-                Code : <a href="http://github.com/damln/Tbc">Github</a>.
-                <br>
-
-                <br>
-<a href="https://twitter.com/intent/tweet?button_hashtag=apitbc" class="twitter-hashtag-button" data-related="damln" data-url="http://tbc.dln.name/">Tweet #apitbc</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </p>
-
-            <h2>URL</h2>
-            <code>http://tbc.dln.name</code>
-            <h2>Toutes les lignes</h2>
-            <p>
-                <code>GET /lines</code>
-                <a href="/lines">Voir</a>
-            </p>
-            <h3>Réponse</h3>
-            <pre>
+                <h2>URL</h2>
+                <code>http://tbc.dln.name</code>
+                <h2>Toutes les lignes</h2>
+                <p>
+                    <code>GET /lines</code>
+                    <a href="/lines">Voir</a>
+                </p>
+                <h3>Réponse</h3>
+                <pre>
 {
     lines: [
         {
@@ -82,36 +87,44 @@
         ...
 }
             </pre>
-            <h2>Directions et Arrêts</h2>
-            <p>
-                <code>GET /lines/<span class="blue">:ligne_id</span></code>
-            </p>
+                <h2>Directions et Arrêts</h2>
+                <p>
+                    <code>GET /lines/<span class="blue">:ligne_id</span></code>
+                </p>
 
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Variables</th>
-                  <th>Format</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>:ligne_id</code></td>
-                  <td><code>STRING</code></td>
-                  <td>Identifiant de la ligne (ex: <code>TBT59_A</code>)</td>
-                </tr>
-              </tbody>
-            </table>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Variables</th>
+                            <th>Format</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <code>:ligne_id</code>
+                            </td>
+                            <td>
+                                <code>STRING</code>
+                            </td>
+                            <td>
+                                Identifiant de la ligne (ex:
+                                <code>TBT59_A</code>
+                                )
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-            <h3>Exemple:</h3>
-            <p>
-                <code>GET /lines/TBT59_A</code>
-                <a href="/lines/TBT59_A">Voir</a>
-            </p>
+                <h3>Exemple:</h3>
+                <p>
+                    <code>GET /lines/TBT59_A</code>
+                    <a href="/lines/TBT59_A">Voir</a>
+                </p>
 
-            <h3>Réponse:</h3>
-            <pre class="prettyprint language-javascript">
+                <h3>Réponse:</h3>
+                <pre class="prettyprint language-javascript">
 {
     directions: {
         backward: "La Gardette  Bassens Carbon-Blanc / FLOIRAC Dravemont ",
@@ -136,49 +149,81 @@
 }
             </pre>
 
-
-
             <h2>Horaires de passage</h2>
             <p>
                 <code>GET /dates/<span class="blue">:ligne_id</span>/<span class="blue">:direction</span>/<span class="blue">:stop_id</span>/<span class="blue">:date</span></code>
             </p>
 
             <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Variables</th>
-                  <th>Format</th>
-                  <td>Description</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>:ligne_id</code></td>
-                  <td><code>STRING</code></td>
-                  <td>Numéro de la ligne (ex: <code>A</code>)</td>
-                </tr>
-                <tr>
-                  <td><code>:direction</code></td>
-                  <td><code>backward</code> OR <code>forward</code></td>
-                  <td>Direction de la ligne</td>
-                </tr>
-                <tr>
-                  <td><code>:stop_id</code></td>
-                  <td><code>STRING</code></td>
-                  <td>Identifiant de l'arrêt (ex: <code>TBT4588HOPIR</code>)</td>
-                </tr>
-                <tr>
-                    <td><code>:date</code></td>
-                    <td><code>YYYY-MM-DD</code></td>
-                    <td>Date (ex: <code>2012-01-30</code>)</td>
-                </tr>
-              </tbody>
+                <thead>
+                    <tr>
+                        <th>Variables</th>
+                        <th>Format</th>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>:ligne_id</code>
+                        </td>
+                        <td>
+                            <code>STRING</code>
+                        </td>
+                        <td>
+                            Numéro de la ligne (ex:
+                            <code>A</code>
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>:direction</code>
+                        </td>
+                        <td>
+                            <code>backward</code>
+                            OR
+                            <code>forward</code>
+                        </td>
+                        <td>Direction de la ligne</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>:stop_id</code>
+                        </td>
+                        <td>
+                            <code>STRING</code>
+                        </td>
+                        <td>
+                            Identifiant de l'arrêt (ex:
+                            <code>TBT4588HOPIR</code>
+                            )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>:date</code>
+                        </td>
+                        <td>
+                            <code>YYYY-MM-DD</code> OR <code>now</code>
+                        </td>
+                        <td>
+                            Prochains passages ou horaires à une date(ex:
+                            <code>2012-01-30</code>, <code>now</code>
+                            )
+                        </td>
+                    </tr>
+                </tbody>
             </table>
 
             <h3>Exemple:</h3>
             <p>
                 <code>GET /dates/A/backward/TBT4588HOPIR/2012-01-30</code>
                 <a href="/dates/A/backward/TBT4588HOPIR/2012-01-30">Voir</a>
+                <br>
+                <br>
+                <code>GET /dates/A/backward/TBT4588HOPIR/now</code>
+                <a href="/dates/A/backward/TBT4588HOPIR/now">Voir</a>
             </p>
             <h3>Réponse</h3>
             <pre>
@@ -195,16 +240,15 @@
 }
             </pre>
 
-        <h2>Disclaimer</h2>
-        <p class="alert alert-error">
-            Je ne suis pas réponsable des données proposées par l'API TBC.
-        </p>
-
+            <h2>Disclaimer</h2>
+            <p class="alert alert-error">
+                Je ne suis pas réponsable des données proposées par l'API TBC.
+            </p>
 
         </div>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/app.js"></script>
-    <!-- // <script type="text/javascript" src="/js_g/app.js"></script> -->
-    </body>
-  </html>
+        <script type="text/javascript" src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/app.js"></script><!-- // <script type="text/javascript" src="/js_g/app.js"></script>
+    -->
+</body>
+</html>

@@ -80,6 +80,40 @@ sub stops {
     return $hash;
 }
 
+sub now {
+    my $class = shift;    # class method, so use $class
+
+    my $line_number = shift;
+    my $dir = shift;
+    my $stop_id = shift;
+
+    bless \$line_number, $class;
+    bless \$dir, $class;
+    bless \$stop_id, $class;
+
+    $line_number = uc($line_number);
+    $stop_id = uc($stop_id);
+
+    my $url = "http://www.infotbc.com/nextdeparture/$line_number/stoppoint/$stop_id/$dir#departure";
+    my $tx = $ua->get($url);
+
+    my @list;
+    for my $tr ($tx->res->dom->find('#navitia-departure-result li')->each) {
+        my $min = $tr->text;
+
+        $min =~ s/^\s+//;
+        $min =~ s/\s+$//;
+
+        if ($min ne "")  {
+            my $date = "$min";
+            push(@list, $date);
+        }
+
+    }
+    return [@list];
+
+}
+
 sub dates {
     my $class = shift;    # class method, so use $class
 
