@@ -18,7 +18,7 @@ Installer [Mojolicous](http://mojolicio.us/)
 Tester en local
 ===
 
-    cd Tbc/
+    $ cd Tbc/
     $ morbo main.pl
 
 Aller sur [127.0.0.1:3000](http://127.0.0.1:3000)
